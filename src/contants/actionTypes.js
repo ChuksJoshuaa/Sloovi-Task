@@ -1,0 +1,11 @@
+export const FETCH_POST = "FETCH_POST";
+export const FETCH_SINGLE_POST = "FETCH_SINGLE_POST";
+export const LOGIN = "LOGIN";
+export const LOGOUT = "LOGOUT";
+export const UPDATE = "UPDATE";
+export const DELETE = "DELETE";
+export const CREATE = "CREATE";
+export const DETAILS = "DETAILS";
+export const START_LOADING = "START_LOADING";
+export const END_LOADING = "END_LOADING";
+export const ERROR = "ERROR";

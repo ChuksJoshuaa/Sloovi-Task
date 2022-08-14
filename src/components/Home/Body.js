@@ -8,7 +8,8 @@ const randy = Math.floor(Math.random() * 50000);
 const sasuke = Math.floor(Math.random() * 10000);
 const completed = Math.floor(Math.random() * 2);
 const user_id = JSON.parse(localStorage.getItem("profile"))?.results?.user_id;
-const user_name = JSON.parse(localStorage.getItem("profile"))?.results?.name;
+const user_name =
+  JSON.parse(localStorage.getItem("profile"))?.results?.name || "User";
 
 const initialState = {
   task_msg: "",

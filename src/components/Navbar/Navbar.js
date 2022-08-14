@@ -6,6 +6,7 @@ import { Link, useHistory, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import decode from "jwt-decode";
 import { LOGOUT } from "../../contants/actionTypes";
+import logo from "../Images/image.jpg";
 
 const Navbar = () => {
   const classes = useStyles();
@@ -51,13 +52,13 @@ const Navbar = () => {
           <div className={classes.profile}>
             <Avatar
               className={classes.purple}
-              alt={user.results.name}
-              src={user.results.icon}
+              alt={user.results.name ? user.results.name : "User"}
+              src={user.results.icon ? user.results.icon : logo}
             >
-              {user.results.name.charAt(0)}
+              {user.results.name ? user.results.name.charAt(0) : "P"}
             </Avatar>
             <Typography className={classes.userFan} variant="h6">
-              {user.results.name}
+              {user.results.name ? user.results.name : "Username"}
             </Typography>
             <Button
               variant="contained"
@@ -70,7 +71,11 @@ const Navbar = () => {
             </Button>
           </div>
         ) : (
-          <Link to="/login" target="_blank" style={{ textDecoration: "none" }}>
+          <Link
+            to="/login"
+            style={{ textDecoration: "none" }}
+            onClick={() => (window.location.href = "/login")}
+          >
             <Button variant="contained" color="primary">
               Sign in
             </Button>
